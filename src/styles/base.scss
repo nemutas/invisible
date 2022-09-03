@@ -1,0 +1,34 @@
+@use './mixins/media.scss' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap');
+
+:root {
+	--font-roboto: 'Roboto Mono', monospace;
+	--font-weight-light: 300;
+	--font-weight-regular: 400;
+}
+
+* {
+	&::selection {
+		background-color: #fff5;
+	}
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	font-size: calc(1000vw / 750);
+	@include pc {
+		font-size: calc(1000vw / 1500);
+	}
+	overflow: hidden;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
