@@ -10,7 +10,6 @@
 		"deploy": "npm run build && gh-pages -d dist"
 	},
 	"devDependencies": {
-		"@types/lodash": "^4.14.184",
 		"@types/three": "^0.143.1",
 		"gh-pages": "^4.0.0",
 		"ress": "^5.0.2",
@@ -20,9 +19,7 @@
 		"vite-plugin-glsl": "^0.2.2"
 	},
 	"dependencies": {
-		"gsap": "^3.11.0",
 		"lil-gui": "^0.17.0",
-		"lodash": "^4.17.21",
 		"three": "^0.143.0"
 	}
 }
