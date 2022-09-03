@@ -1,8 +1,4 @@
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 import { TCanvas } from './three/TCanvas';
-
-gsap.registerPlugin(ScrollTrigger)
 
 class App {
 	constructor() {
