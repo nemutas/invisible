@@ -62,10 +62,7 @@ export class TCanvas extends TCanvasBase {
 	}
 
 	private createSyncTextPlane = () => {
-		this.sections = this.sectionElements.map(element => {
-			const { domSyncPlane, domTextDrawer } = this.createDomSyncObject(element)
-			return { domSyncPlane, domTextDrawer }
-		})
+		this.sections = this.sectionElements.map(element => this.createDomSyncObject(element))
 		this.title = this.createDomSyncObject(this.titleElement)
 		this.paramsHeader = this.createDomSyncObject(this.paramsHeaderElement)
 		this.paramsValue = this.createDomSyncObject(this.paramsValueElement)
