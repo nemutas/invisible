@@ -78,7 +78,7 @@ export class TCanvas extends TCanvasBase {
 			transparent: true,
 		})
 		const domSyncPlane = new DomSyncPlane(element, material)
-		const domTextDrawer = new DomTextDrawer(domSyncPlane)
+		const domTextDrawer = new DomTextDrawer(element)
 		material.uniforms.u_texture.value = domTextDrawer.texture
 		this.scene.add(domSyncPlane.mesh)
 

@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { DomSyncPlane } from './DomSyncPlane';
 
 export class DomTextDrawer {
 	texture!: THREE.CanvasTexture
@@ -18,7 +17,7 @@ export class DomTextDrawer {
 	}
 	private chars: string[] = []
 
-	constructor(private dsp: DomSyncPlane) {
+	constructor(private element: HTMLElement) {
 		this.init()
 		this.createCharSet()
 		this.updateCanvasInfo()
@@ -45,13 +44,13 @@ export class DomTextDrawer {
 	}
 
 	updateCanvasInfo() {
-		const rect = this.dsp.element.getBoundingClientRect()
+		const rect = this.element.getBoundingClientRect()
 		this.canvas.width = rect.width
 		this.canvas.height = rect.height
 
-		const style = window.getComputedStyle(this.dsp.element)
+		const style = window.getComputedStyle(this.element)
 		this.textInfo = {
-			text: this.dsp.element.innerText,
+			text: this.element.innerText,
 			fontFamily: style.fontFamily,
 			fontWeight: style.fontWeight,
 			fontSize: style.fontSize,
@@ -84,7 +83,7 @@ export class DomTextDrawer {
 		const { width, height } = ctx.canvas
 		const { text: t, color, fontFamily, fontWeight, fontSize, letterSpacing, lineHeight, textAlign } = this.textInfo
 
-		const text = reloadText ? this.dsp.element.innerText : t
+		const text = reloadText ? this.element.innerText : t
 
 		ctx.clearRect(0, 0, width, height)
 
